@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+.page-header {
+    color: #f7c40ad9;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.user-input {
+    width:100%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    outline: none;
+}
+
+input:focus {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /* outline: none; */
+    border-bottom: 2px solid #f7c40ad9 !important;
+    border-bottom-color: #f7c40ad9 !important;
+}
+
+input.user-input.ng-pristine.ng-invalid.ng-touched {
+    border-bottom-color: red !important;
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.errorMsg {
+    color: red;
+    padding-top: 4px;
+}
+
+.btn-width {
+    width:100px;
+}

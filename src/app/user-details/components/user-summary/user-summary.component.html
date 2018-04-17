@@ -1,0 +1,69 @@
+<h2 class="page-header">
+  <b>USER</b> SUMMARY</h2>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <h4>Personal Details</h4>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <label>FIRST NAME</label>
+      <br>
+      <span>{{userModel?.personal?.firstName}}</span>
+    </div>
+    <div class="col">
+      <label>LAST NAME</label>
+      <br>
+      <span>{{userModel?.personal?.lastName}}</span>
+    </div>
+    <div class="col">
+      <label>EMAIL</label>
+      <br>
+      <span>{{userModel?.personal?.email}}</span>
+    </div>
+    <div class="col">
+      <label>MOBILE</label>
+      <br>
+      <span>{{userModel?.personal?.mobile}}</span>
+    </div>
+    <div class="col">
+      <label>DOB</label>
+      <br>
+      <span>{{userModel?.personal?.dob}}</span>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <h4>Office Details</h4>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <label>OFFICE ADDRESS : </label>
+      <span>{{userModel?.occupation}}</span>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <h4>Loan Details</h4>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-3">
+      <label>LOTAL LOAN : </label>
+      <span>{{userModel?.loan?.totalLoan| currency: 'INR':true}}</span>
+    </div>
+    <div class="col-md-3">
+      <label>EMI : </label>
+      <span>{{userModel?.loan?.existingEmi| currency: 'INR':true}}</span>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>
+
+<br>
+<div class="wrapper">
+    <button type="button" class="btn btn-warning btn-width" (click)="router.navigate(['user/loan'])">Back</button>
+</div>

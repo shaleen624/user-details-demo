@@ -1,0 +1,100 @@
+<h2 class="page-header"><b>PERSONAL</b> DETAILS</h2>
+<br>
+<br>
+<div class="container">
+    <form #personalDetailsForm="ngForm">
+        <div class="form-group">
+            <div class="row">
+                <div class="col">
+                    <label>EMAIL</label>
+                    <input class="user-input" type="text" [(ngModel)]="personalModel.email" [ngModelOptions]="{updateOn: 'blur'}" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                        #email="ngModel" name="usrEmail" required>
+                    <!-- Error message -->
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="errorMsg">
+                        <span *ngIf="email?.errors?.required">
+                            {{constants.REQ_ERROR}}
+                        </span>
+                        <span *ngIf="email?.errors?.pattern && email.touched">
+                            {{constants.FIELD_ERROR}}
+                        </span>
+                    </div>
+                    <!-- Error message - end -->
+                </div>
+                <div class="col">
+                    <label>MOBILE NUMBER</label>
+                    <input class="user-input" type="text" [(ngModel)]="personalModel.mobile" #usrMobile=ngModel name="usrMob" pattern="^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$"
+                        required>
+                    <!-- Error message -->
+                    <div *ngIf="usrMobile.invalid && (usrMobile.dirty || usrMobile.touched)" class="errorMsg">
+                        <span *ngIf="usrMobile?.errors?.required">
+                            {{constants.REQ_ERROR}}
+                        </span>
+                        <span *ngIf="usrMobile?.errors?.pattern && usrMobile.touched">
+                            {{constants.FIELD_ERROR}}
+                        </span>
+                    </div>
+                    <!-- Error message - end -->
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label>LAST NAME</label>
+                    <input class="user-input" type="text" [(ngModel)]="personalModel.lastName" pattern="^[a-zA-Z ]*$" required #lname="ngModel"
+                        name="usrLstName">
+                    <!-- Error message -->
+                    <div *ngIf="lname.invalid && (lname.dirty || lname.touched)" class="errorMsg">
+                        <span *ngIf="lname?.errors?.required">
+                            {{constants.REQ_ERROR}}
+                        </span>
+                        <span *ngIf="lname?.errors?.pattern && lname.touched">
+                            {{constants.FIELD_ERROR}}
+                        </span>
+                    </div>
+                    <!-- Error message - end -->
+                </div>
+                <div class="col">
+                    <label>FIRST NAME</label>
+                    <input class="user-input" [(ngModel)]="personalModel.firstName" type="text" name="usrFrstName" required minlength="2" pattern="^[a-zA-Z ]*$"
+                        #fname="ngModel">
+                    <!-- Error message -->
+                    <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="errorMsg">
+                        <span *ngIf="fname?.errors?.required">
+                            {{constants.REQ_ERROR}}
+                        </span>
+                        <span *ngIf="fname?.errors?.pattern && fname.touched">
+                            {{constants.FIELD_ERROR}}
+                        </span>
+                    </div>
+                    <!-- Error message - end -->
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>DATE OF BIRTH (DD/MM/YYYY)</label>
+                    <div class="input-group add-on">
+                        <input class="user-input" ngx-mydatepicker name="mydate" [(ngModel)]="personalModel.dob" [options]="myDatePickerOptions"
+                            #dp="ngx-mydatepicker" (dateChanged)="onDateChanged($event)" (inputFieldChanged)="onInputFieldChanged($event)"
+                            autocomplete="off" required #dob="ngModel" />
+                        <button class='fa close-icon' (click)="dp.toggleCalendar();$event.stopPropagation()"></button>
+                        <!-- Error message -->
+                        <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="errorMsg">
+                            <span *ngIf="dob?.errors?.required">
+                                {{constants.REQ_ERROR}}
+                            </span>
+                            <span *ngIf="!validDate && dob.touched && !dob?.errors?.required">
+                                {{constants.FIELD_ERROR}}
+                            </span>
+                        </div>
+                        <!-- Error message - end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<div class="wrapper">
+    <button type="button" class="btn btn-warning btn-width" (click)="onNextClick()" [disabled]="!personalDetailsForm.form.valid">Next</button>
+</div>

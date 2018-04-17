@@ -1,0 +1,45 @@
+/* remove border between controls */
+.add-on .input-group-btn > .btn {
+    border-left-width: 0;
+    left:-2px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+/* stop the glowing blue shadow */
+.add-on .form-control:focus {
+    -webkit-box-shadow: none; 
+            box-shadow: none;
+    border-color:#cccccc; 
+}
+
+.fa-calendar {
+    float: right;
+
+}
+
+.close-icon {
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+	content: "\f073";
+    display: block;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    /* margin: auto; */
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* .align-top {
+	top: -23px !important;
+} */

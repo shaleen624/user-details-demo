@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "type": "permanent",
+    "email": "john.doe@gmail.com",
+    "mobile": "8976342312",
+    "firstName": "john",
+    "lastName": "doe",
+    "dob": "12/04/1895"
+}

@@ -1,0 +1,69 @@
+<h2 class= "page-header"><b>LOAN</b> DETAILS</h2>
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2">
+
+    </div>
+    <div class="col-lg-3"> 
+      <i class="fa fa-briefcase fa-5x"></i> 
+      <!-- <i class="fas fa-hand-holding-usd fa-5x"></i>  -->
+      
+    </div>
+    <div class="col-lg-2">
+
+      </div>
+      <div class="col-lg-3">
+        <i class="fa fa-calculator fa-5x"></i> 
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">
+      
+    </div>
+
+    <div class="col-md-4">
+      <br>
+      <h4><b>TOTAL LOAN AMOUNT</b></h4>
+      <h3>{{loanModel.totalLoan| currency: 'INR':true}}</h3>
+      <mat-slider class="example-margin" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumb-label]="thumbLabel"
+        [tick-interval]="tickInterval" [(ngModel)]="loanModel.totalLoan" [vertical]="vertical">
+      </mat-slider>
+      <b class="rpspadd">10k&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;50k</b>
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+
+    <div class="col-md-4">
+      <br>
+      <h4><b>EXISTING EMI</b></h4>
+      <h3>{{loanModel.existingEmi| currency: 'INR':true}}</h3>
+      <mat-slider class="example-margin" [disabled]="disabled" [invert]="invert" [max]="max" [min]="min" [step]="step" [thumb-label]="thumbLabel"
+        [tick-interval]="tickInterval" [(ngModel)]="loanModel.existingEmi" [vertical]="vertical">
+      </mat-slider>
+      <b class="rpspadd">10k&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;50k</b>
+    </div>
+    <div class="col-lg-1"></div>
+    <div class="col-md-1">
+      <!-- <i class="fa fa-angle-right fa-5x align-middle"></i> -->
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1">
+        <i class="fa fa-angle-left fa-5x align-middle" (click)="router.navigate(['user/occupation'])"></i>
+      </div>
+
+      <div class="col-md-10">
+      </div>
+
+      <div class="col-md-1">
+        <i class="fa fa-angle-right fa-5x align-middle" (click)="router.navigate(['user/summary'])"></i>
+      </div>
+    </div>
+  </div>
