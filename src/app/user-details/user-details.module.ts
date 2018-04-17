@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../common/modules/shared.module';
 import { AngularMaterialModule } from '../common/modules/angular-material.module';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
 // Services
 import { UserDetails } from './model/user-model';
 import { UserHttpService } from './services/user-http.service';
@@ -24,10 +22,7 @@ const ROUTES: Routes = [
   imports: [
     SharedModule,
     RouterModule.forChild(ROUTES),
-    AngularMaterialModule,
-    // HttpClientInMemoryWebApiModule.forRoot (
-    //   InMemoryDataService, { dataEncapsulation: false }
-    // )
+    AngularMaterialModule
   ],
   declarations: [
     PersonalDetailsComponent,

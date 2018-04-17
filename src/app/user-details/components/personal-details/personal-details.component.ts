@@ -21,21 +21,23 @@ export class PersonalDetailsComponent implements OnInit {
     private router: Router,
     private userHttpService: UserHttpService
   ) { }
-  personalModel = this.userDetails.userModel.personal;
+  userModel =  this.userDetails.userModel;
+  // userModel.personal = this.userDetails.userModel.personal;
   myDatePickerOptions: INgxMyDpOptions = {
-    // other options...
+    // add other options here.
     dateFormat: 'dd/mm/yyyy',
   };
   ngOnInit() {
     this.userHttpService.getUserData().subscribe((userData) => {
-      this.personalModel = userData;
+      this.userModel.personal = userData;
+      this.userModel.personal = userData;
       this.setDateField(userData.dob);
     });
   }
 
   setDateField(dateString) {
     const dateValues = dateString.split('/');
-    this.personalModel['dob'] = {
+    this.userModel.personal['dob'] = {
       date: {
         year: this.removeLeadingZeros(dateValues[2]),
         month: this.removeLeadingZeros(dateValues[1]),
@@ -51,13 +53,13 @@ export class PersonalDetailsComponent implements OnInit {
   onDateChanged(event: IMyDateModel): void {
     if (event.formatted !== '') {
       this.validDate = true;
-      this.personalModel['dob'] = event.formatted;
+      this.userModel.personal['dob'] = event.formatted;
     }
   }
 
   onInputFieldChanged(event: IMyInputFieldChanged): void {
     this.validDate = event.valid;
-    this.personalModel['dob'] = event.value;
+    this.userModel.personal['dob'] = event.value;
   }
 
   onNextClick() {

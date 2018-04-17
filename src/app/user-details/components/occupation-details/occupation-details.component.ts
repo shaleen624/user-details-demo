@@ -24,7 +24,6 @@ import { filter } from 'lodash';
 })
 export class OccupationDetailsComponent {
   addressData = [];
-  showDropDown = true;
   constructor(
     public userDetails: UserDetails,
     public addressModel: Address,
@@ -34,7 +33,8 @@ export class OccupationDetailsComponent {
 
 
   search(term: string): void {
-    this.addressData = filter(this.addressModel.addresses, function(o) { return o.address.toLowerCase().includes(term.toLowerCase()); });
+    this.addressData = filter(this.addressModel.addresses,
+      function(o) { return o.address.toLowerCase().includes(term.toLowerCase()); });
   }
 
 }

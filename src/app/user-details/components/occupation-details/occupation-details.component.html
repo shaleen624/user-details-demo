@@ -21,10 +21,10 @@
       <div class="wrapper">
         <div id="search-component">
           <h4>WHAT IS YOUR COMPANY'S NAME?</h4>
-          <input #occupationDetails class="user-input" [(ngModel)]="userModel.occupation" id="search-box" (keyup)="search(occupationDetails.value)"/>
-          <div class="autoSuggest" *ngIf="addressData?.length>0 && showDropDown">
+          <input #occupationDetails class="user-input" [(ngModel)]="userModel.occupation" id="search-box" (keyup)="search(occupationDetails.value); showSuggestion=true"/>
+          <div class="autoSuggest" *ngIf="addressData?.length>0 && occupationDetails.value && showSuggestion">
             <ul class="search-result">
-              <li *ngFor="let data of addressData" (click)="userModel.occupation = data?.address; showDropDown= false">
+              <li *ngFor="let data of addressData" (click)="userModel.occupation = data?.address; showSuggestion= false">
                 <a>
                   {{data?.address}}
                 </a>
@@ -46,7 +46,7 @@
     <div class="col-md-10">
     </div>
 
-    <div class="col-md-1">
+    <div *ngIf="occupationDetails.value" class="col-md-1">
       <i class="fa fa-angle-right fa-5x align-middle" (click)="router.navigate(['user/loan'])"></i>
     </div>
   </div>
