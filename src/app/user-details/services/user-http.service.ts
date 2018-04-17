@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
-import { tap } from 'rxjs/operators/tap';
 import { catchError } from 'rxjs/operators/catchError';
 
 @Injectable()
@@ -11,18 +10,6 @@ export class UserHttpService {
   constructor(
     private http: HttpClient
   ) { }
-
-  /* GET heroes whose name contains search term */
-  searchHeroes(term: string) {
-    if (!term.trim()) {
-      // if not search term, return empty hero array.
-      return of([]);
-    }
-    return this.http.get(`api/addresses/?address=${term}`).pipe(
-      tap(_ => console.log(`found addresses matching "${term}"`)),
-      catchError(this.handleError('searchAddresses', []))
-    );
-  }
 
   getUserData(): Observable<any> {
     return this.http.get('assets/user-data.json').pipe(
