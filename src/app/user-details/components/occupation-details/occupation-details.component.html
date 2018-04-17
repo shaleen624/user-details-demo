@@ -22,9 +22,9 @@
         <div id="search-component">
           <h4>WHAT IS YOUR COMPANY'S NAME?</h4>
           <input #occupationDetails class="user-input" [(ngModel)]="userModel.occupation" id="search-box" (keyup)="search(occupationDetails.value)"/>
-          <div class="autoSuggest" *ngIf="(addressData$ | async)?.length>0 && showDropDown">
+          <div class="autoSuggest" *ngIf="addressData?.length>0 && showDropDown">
             <ul class="search-result">
-              <li *ngFor="let data of addressData$ | async" (click)="userModel.occupation = data?.address; showDropDown= false">
+              <li *ngFor="let data of addressData" (click)="userModel.occupation = data?.address; showDropDown= false">
                 <a>
                   {{data?.address}}
                 </a>

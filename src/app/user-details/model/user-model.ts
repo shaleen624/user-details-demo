@@ -1,4 +1,3 @@
-// import { UserDetails } from './user-model';
 export class UserDetails {
     userModel = {
         personal: {

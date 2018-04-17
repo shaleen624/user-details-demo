@@ -36,32 +36,32 @@ export class InMemoryDataService implements InMemoryDbService {
         "address": "318 Canino Road, Houston, TX 77076"
       },
       {
-        "id": 8,
-        "address": "21st 38th Street, New York, NY 10016"
+        'id': 8,
+        'address': '21st 38th Street, New York, NY 10016'
       },
       {
-        "id": 9,
-        "address": "Massachusetts Avenue, Cambridge, MA 02139"
+        'id': 9,
+        'address': 'Massachusetts Avenue, Cambridge, MA 02139'
       },
       {
-        "id": 10,
-        "address": "1907 Spruce Street, Philadelphia, PA 19103-5732"
+        'id': 10,
+        'address': '1907 Spruce Street, Philadelphia, PA 19103-5732'
       },
       {
-        "id": 11,
-        "address": "Michigan Avenue, Suite 1170, Chicago, IL 60611"
+        'id': 11,
+        'address': 'Michigan Avenue, Suite 1170, Chicago, IL 60611'
       },
       {
-        "id": 12,
-        "address": "7280 N. Caldwell Avenue, Niles, IL 60714"
+        'id': 12,
+        'address': '7280 N. Caldwell Avenue, Niles, IL 60714'
       },
       {
-        "id": 13,
-        "address": "Woodward Avenue, Suite 300, Detroit, MI 48226"
+        'id': 13,
+        'address': 'Woodward Avenue, Suite 300, Detroit, MI 48226'
       },
       {
-        "id": 14,
-        "address": "1250 East Moore Lake Drive, Suite 242, Minneapolis (Fridley), MN 55432"
+        'id': 14,
+        'address': '1250 East Moore Lake Drive, Suite 242, Minneapolis (Fridley), MN 55432'
       }
     ];
     return { addresses };
