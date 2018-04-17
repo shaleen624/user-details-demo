@@ -1,12 +1,6 @@
 import { Address } from './../../model/address-model';
 import { UserHttpService } from './../../services/user-http.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { of } from 'rxjs/observable/of';
-import {
-  debounceTime, distinctUntilChanged, switchMap
-} from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { UserDetails } from '../../model/user-model';
 import { Router } from '@angular/router';
@@ -24,6 +18,7 @@ import { filter } from 'lodash';
 })
 export class OccupationDetailsComponent {
   addressData = [];
+  showSuggestion = false;
   constructor(
     public userDetails: UserDetails,
     public addressModel: Address,

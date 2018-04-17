@@ -96,5 +96,5 @@
 </div>
 <br>
 <div class="wrapper">
-    <button type="button" class="btn btn-warning btn-width" (click)="onNextClick()" [disabled]="!personalDetailsForm.form.valid">Next</button>
+    <button type="button" class="btn btn-warning btn-width" (click)="router.navigate(['user/occupation'])" [disabled]="!personalDetailsForm.form.valid">Next</button>
 </div>

@@ -18,18 +18,17 @@ export class PersonalDetailsComponent implements OnInit {
   constants = AppConstants;
   constructor(
     public userDetails: UserDetails,
-    private router: Router,
+    public router: Router,
     private userHttpService: UserHttpService
   ) { }
   userModel =  this.userDetails.userModel;
-  // userModel.personal = this.userDetails.userModel.personal;
   myDatePickerOptions: INgxMyDpOptions = {
     // add other options here.
     dateFormat: 'dd/mm/yyyy',
   };
+
   ngOnInit() {
     this.userHttpService.getUserData().subscribe((userData) => {
-      this.userModel.personal = userData;
       this.userModel.personal = userData;
       this.setDateField(userData.dob);
     });
@@ -60,10 +59,6 @@ export class PersonalDetailsComponent implements OnInit {
   onInputFieldChanged(event: IMyInputFieldChanged): void {
     this.validDate = event.valid;
     this.userModel.personal['dob'] = event.value;
-  }
-
-  onNextClick() {
-    this.router.navigate(['user/occupation']);
   }
 
 }
