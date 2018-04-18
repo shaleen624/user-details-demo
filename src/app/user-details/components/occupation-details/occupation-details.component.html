@@ -40,14 +40,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-1">
-      <i class="fa fa-angle-left fa-5x align-middle" (click)="router.navigate(['user/personal'])"></i>
+      <i class="fa fa-angle-left fa-5x align-middle" (click)="navigate('backward', 'user/personal')"></i>
     </div>
 
     <div class="col-md-10">
     </div>
 
     <div *ngIf="occupationDetails.value" class="col-md-1">
-      <i class="fa fa-angle-right fa-5x align-middle" (click)="router.navigate(['user/loan'])"></i>
+      <i class="fa fa-angle-right fa-5x align-middle" (click)="navigate('forward', 'user/loan')"></i>
     </div>
   </div>
 </div>

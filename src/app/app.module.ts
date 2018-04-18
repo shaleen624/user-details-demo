@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './common/modules/angular-material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
+import { AnimationService } from './animations/app.animation.service';
 
 export const appRoutes: Routes = [
   {path: 'user', loadChildren: './user-details/user-details.module#UserDetailsModule'},
@@ -29,7 +30,7 @@ export const appRoutes: Routes = [
     NgxMyDatePickerModule.forRoot(),
     AngularMaterialModule,
   ],
-  providers: [],
+  providers: [AnimationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
