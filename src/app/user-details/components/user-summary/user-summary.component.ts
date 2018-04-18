@@ -2,11 +2,13 @@ import { UserDetails } from './../../model/user-model';
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimationService } from '../../../animations/app.animation.service';
+import { routeAnimation } from '../../../animations/slide-in-out.animation';
 
 @Component({
   selector: 'app-user-summary',
   templateUrl: './user-summary.component.html',
-  styleUrls: ['./user-summary.component.css']
+  styleUrls: ['./user-summary.component.css'],
+  animations: [routeAnimation],
 })
 export class UserSummaryComponent implements OnInit {
   animationServiceEventsSubscription: any;

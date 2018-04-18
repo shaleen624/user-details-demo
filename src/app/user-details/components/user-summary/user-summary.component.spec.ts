@@ -5,7 +5,6 @@ import { UserDetails } from '../../model/user-model';
 import { Router } from '@angular/router';
 import { AnimationService } from '../../../animations/app.animation.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule } from '@angular/forms';
 
 class MockRouter {
@@ -21,7 +20,6 @@ describe('UserSummaryComponent', () => {
       declarations: [ UserSummaryComponent ],
       imports: [
         FormsModule,
-        HttpClientTestingModule,
         BrowserAnimationsModule,
       ],
       providers: [
