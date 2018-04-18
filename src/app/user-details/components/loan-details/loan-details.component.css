@@ -12,12 +12,6 @@
   .mat-slider-horizontal {
     width: 300px;
   }
-
-  .fa {
-    /* font: normal normal normal 120px/21 FontAwesome; */
-    /* font-size: xx-large; */
-  }
-
   /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;

@@ -48,7 +48,6 @@
     </div>
     <div class="col-lg-1"></div>
     <div class="col-md-1">
-      <!-- <i class="fa fa-angle-right fa-5x align-middle"></i> -->
     </div>
   </div>
 </div>
@@ -62,7 +61,7 @@
       <div class="col-md-10">
       </div>
 
-      <div class="col-md-1">
+      <div class="col-md-1" *ngIf="loanModel.totalLoan> 50000 && loanModel.existingEmi>50000">
         <i class="fa fa-angle-right fa-5x align-middle" (click)="router.navigate(['user/summary'])"></i>
       </div>
     </div>

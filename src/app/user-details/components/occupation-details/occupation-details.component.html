@@ -21,7 +21,7 @@
       <div class="wrapper">
         <div id="search-component">
           <h4>WHAT IS YOUR COMPANY'S NAME?</h4>
-          <input #occupationDetails class="user-input" [(ngModel)]="userModel.occupation" id="search-box" (keyup)="search(occupationDetails.value); showSuggestion=true"/>
+          <input #occupationDetails class="user-input" [(ngModel)]="userModel.occupation" id="search-box" (keyup)="getSuggestion(occupationDetails.value); showSuggestion=true"/>
           <div class="autoSuggest" *ngIf="addressData?.length>0 && occupationDetails.value && showSuggestion">
             <ul class="search-result">
               <li *ngFor="let data of addressData" (click)="userModel.occupation = data?.address; showSuggestion= false">

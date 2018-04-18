@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './loan-details.component.html',
   styleUrls: ['./loan-details.component.css']
 })
-export class LoanDetailsComponent implements OnInit {
+export class LoanDetailsComponent {
   autoTicks = false;
   disabled = false;
   invert = false;
@@ -26,9 +26,6 @@ export class LoanDetailsComponent implements OnInit {
     public router: Router
   ) { }
   loanModel = this.userDetails.userModel.loan;
-
-  ngOnInit() {
-  }
 
   get tickInterval(): number | 'auto' {
     return this.showTicks ? (this.autoTicks ? 'auto' : this._tickInterval) : 0;

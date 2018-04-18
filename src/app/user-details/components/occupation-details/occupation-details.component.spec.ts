@@ -49,12 +49,12 @@ describe('OccupationDetailsComponent', () => {
   }));
 
   it('should filter suggestions data', () => {
-    component.search('street');
+    component.getSuggestion('street');
     expect(component.addressData.length).toEqual(4);
   });
 
   it('should give no suggestion data', () => {
-    component.search('gghghj');
+    component.getSuggestion('gghghj');
     expect(component.addressData.length).toEqual(0);
   });
 });

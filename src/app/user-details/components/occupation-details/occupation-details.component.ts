@@ -25,9 +25,11 @@ export class OccupationDetailsComponent {
     public router: Router
   ) { }
   userModel = this.userDetails.userModel;
-
-
-  search(term: string): void {
+  /**
+   * Function used to update the string date field in calender input.
+   * @param term - user typed value in the input.
+   */
+  getSuggestion(term: string): void {
     this.addressData = filter(this.addressModel.addresses,
       function(o) { return o.address.toLowerCase().includes(term.toLowerCase()); });
   }
