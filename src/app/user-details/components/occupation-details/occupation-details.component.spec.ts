@@ -17,7 +17,7 @@ describe('OccupationDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OccupationDetailsComponent ],
+      declarations: [OccupationDetailsComponent],
       imports: [
         FormsModule,
         HttpClientModule,
@@ -26,11 +26,11 @@ describe('OccupationDetailsComponent', () => {
       ],
       providers: [
         UserDetails,
-        {provide: Router, useClass: MockRouter},
+        { provide: Router, useClass: MockRouter },
         UserHttpService
       ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -41,5 +41,20 @@ describe('OccupationDetailsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render "Occupation details" as page heading', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('OCCUPATION DETAILS');
+  }));
+
+  it('should filter suggestions data', () => {
+    component.search('street');
+    expect(component.addressData.length).toEqual(4);
+  });
+
+  it('should give no suggestion data', () => {
+    component.search('gghghj');
+    expect(component.addressData.length).toEqual(0);
   });
 });

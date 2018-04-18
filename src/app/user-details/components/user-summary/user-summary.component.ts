@@ -7,15 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './user-summary.component.html',
   styleUrls: ['./user-summary.component.css']
 })
-export class UserSummaryComponent implements OnInit {
+export class UserSummaryComponent {
 
   constructor(
     public userDetails: UserDetails,
     public router: Router
   ) { }
   userModel = this.userDetails.userModel;
-
-  ngOnInit() {
-  }
 
 }

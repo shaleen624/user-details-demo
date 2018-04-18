@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserSummaryComponent } from './user-summary.component';
-import { UserDetails } from '../model/user-model';
+import { UserDetails } from '../../model/user-model';
 import { Router } from '@angular/router';
 
 class MockRouter {
@@ -32,4 +32,9 @@ describe('UserSummaryComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render "User Summery" as page heading', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('USER SUMMARY');
+  }));
 });
