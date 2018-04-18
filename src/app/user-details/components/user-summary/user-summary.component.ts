@@ -14,7 +14,6 @@ export class UserSummaryComponent implements OnInit {
   @HostBinding('style.display') display = 'block';
   constructor(
     public userDetails: UserDetails,
-    public router: Router,
     private animationService: AnimationService
   ) { }
   userModel = this.userDetails.userModel;

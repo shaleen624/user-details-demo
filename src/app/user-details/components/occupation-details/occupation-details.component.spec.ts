@@ -1,3 +1,4 @@
+import { AnimationService } from './../../../animations/app.animation.service';
 import { UserHttpService } from './../../services/user-http.service';
 import { FormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -26,6 +27,7 @@ describe('OccupationDetailsComponent', () => {
       ],
       providers: [
         UserDetails,
+        AnimationService,
         { provide: Router, useClass: MockRouter },
         UserHttpService
       ]

@@ -3,6 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { UserSummaryComponent } from './user-summary.component';
 import { UserDetails } from '../../model/user-model';
 import { Router } from '@angular/router';
+import { AnimationService } from '../../../animations/app.animation.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 
 class MockRouter {
   navigate = jasmine.createSpy('navigate');
@@ -15,8 +19,14 @@ describe('UserSummaryComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserSummaryComponent ],
+      imports: [
+        FormsModule,
+        HttpClientTestingModule,
+        BrowserAnimationsModule,
+      ],
       providers: [
         UserDetails,
+        AnimationService,
         {provide: Router, useClass: MockRouter}
       ]
     })

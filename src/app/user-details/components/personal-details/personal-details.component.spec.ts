@@ -1,3 +1,4 @@
+import { AnimationService } from './../../../animations/app.animation.service';
 import { UserHttpService } from './../../services/user-http.service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -11,6 +12,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { MAT_CHECKBOX_REQUIRED_VALIDATOR } from '@angular/material';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 class MockRouter {
   navigate = jasmine.createSpy('navigate');
 }
@@ -24,11 +26,13 @@ describe('PersonalDetailsComponent', () => {
       imports: [
         FormsModule,
         HttpClientTestingModule,
+        BrowserAnimationsModule,
         NgxMyDatePickerModule.forRoot(),
       ],
       providers: [
         UserDetails,
         UserHttpService,
+        AnimationService,
         { provide: Router, useClass: MockRouter }
       ]
     })

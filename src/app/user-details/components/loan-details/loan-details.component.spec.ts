@@ -1,3 +1,5 @@
+import { AnimationService } from './../../../animations/app.animation.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Router, RouterModule } from '@angular/router';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -18,10 +20,12 @@ describe('LoanDetailsComponent', () => {
       imports: [
         FormsModule,
         AngularMaterialModule,
-        RouterModule
+        RouterModule,
+        BrowserAnimationsModule
       ],
       providers: [
         UserDetails,
+        AnimationService,
         {provide: Router, useClass: MockRouter}
       ]
     })

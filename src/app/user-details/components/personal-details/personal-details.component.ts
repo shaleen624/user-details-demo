@@ -23,7 +23,6 @@ export class PersonalDetailsComponent implements OnInit {
   constants = AppConstants;
   constructor(
     public userDetails: UserDetails,
-    public router: Router,
     private userHttpService: UserHttpService,
     private animationService: AnimationService
   ) { }
