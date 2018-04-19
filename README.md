@@ -1,7 +1,7 @@
 # User Details demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
-The project has 4 pages and the following features.
+The project has 4 components icluded in a lazily loaded module and the following features.
  1. Page 1 - A personal details form with ngx-myDatepicker component implemetation and and template driven form validations on all                      fields.The fields are populated from a json file using a http get call.
  2. Page 2 - An occupation details component with a custom built auto suggest input using mock data.
  3. Page 3 - A loan details page with two silder component implementation using angular material.
